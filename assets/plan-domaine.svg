@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#e9efe3"/>
+  <g fill="none" stroke="#7d8f69" stroke-width="3">
+    <rect x="120" y="140" width="240" height="160" rx="6"/>
+    <rect x="440" y="120" width="200" height="120" rx="6"/>
+    <rect x="300" y="360" width="320" height="140" rx="6"/>
+    <circle cx="220" cy="420" r="60"/>
+  </g>
+  <g fill="#4a5a3f" font-family="Georgia, serif" font-size="22" text-anchor="middle">
+    <text x="240" y="228">Mairie</text>
+    <text x="540" y="188">Domaine</text>
+    <text x="460" y="438">Salle de réception</text>
+    <text x="220" y="428">Jardin</text>
+  </g>
+  <text x="400" y="60" fill="#b99a5b" font-family="Georgia, serif" font-size="30" font-style="italic" text-anchor="middle">Plan du domaine — image à remplacer</text>
+  <text x="400" y="560" fill="#7d8f69" font-family="Georgia, serif" font-size="18" text-anchor="middle">Remplacer assets/plan-domaine.svg par le plan réel</text>
+</svg>

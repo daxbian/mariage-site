@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <radialGradient id="g" cx="0.3" cy="0.3" r="1">
+      <stop offset="0" stop-color="#f2e6dd"/>
+      <stop offset="1" stop-color="#d9c3b6"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#b99a5b" stroke-width="2" opacity="0.7">
+    <circle cx="300" cy="260" r="120"/>
+    <circle cx="300" cy="260" r="95"/>
+  </g>
+  <g fill="#7d8f69">
+    <path d="M300 200 c-30 30 -30 60 0 90 c30 -30 30 -60 0 -90z"/>
+  </g>
+  <text x="300" y="480" fill="#8a7a6a" font-family="Georgia, serif" font-size="22" font-style="italic" text-anchor="middle">Photo du couple à remplacer</text>
+</svg>

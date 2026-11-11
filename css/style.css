@@ -1,0 +1,430 @@
+:root {
+  --vert-sauge: #7d8f69;
+  --vert-fonce: #4a5a3f;
+  --blush: #e8cfc4;
+  --creme: #faf7f2;
+  --or: #b99a5b;
+  --encre: #3a3a35;
+  --blanc: #ffffff;
+  --ombre: 0 10px 30px rgba(58, 58, 53, 0.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--encre);
+  background: var(--creme);
+}
+
+h1, h2, h3 { font-weight: 500; line-height: 1.25; }
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--vert-fonce);
+  margin-bottom: 1.5rem;
+}
+
+h3 { font-size: 1.35rem; color: var(--vert-fonce); }
+
+p { margin-bottom: 1rem; }
+
+a { color: var(--vert-fonce); }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem; }
+
+.calligraphie {
+  font-family: "Great Vibes", cursive;
+  color: var(--or);
+  line-height: 1.2;
+}
+
+.sur-titre {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--vert-sauge);
+  text-align: center;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.bouton {
+  display: inline-block;
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  text-decoration: none;
+  border: none;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.bouton:hover { background: var(--vert-sauge); transform: translateY(-2px); }
+
+.bouton.secondaire {
+  background: transparent;
+  color: var(--vert-fonce);
+  border: 1px solid var(--vert-fonce);
+}
+
+.bouton.secondaire:hover { background: var(--vert-fonce); color: var(--blanc); }
+
+.en-tete {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(125, 143, 105, 0.25);
+}
+
+.nav-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+  color: var(--vert-fonce);
+  text-decoration: none;
+}
+
+.nav-liens { display: flex; gap: 1.5rem; list-style: none; }
+
+.nav-liens a {
+  text-decoration: none;
+  color: var(--encre);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-liens a:hover, .nav-liens a.actif { border-bottom-color: var(--or); }
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--vert-fonce);
+  margin: 5px auto;
+  transition: 0.3s;
+}
+
+.page { padding: 3rem 0 4rem; }
+
+.page-titre { text-align: center; margin-bottom: 2.5rem; }
+
+.page-titre .calligraphie { font-size: 3rem; }
+
+.page-titre .sur-titre { margin-top: 0.75rem; }
+
+.carte {
+  background: var(--blanc);
+  border-radius: 14px;
+  box-shadow: var(--ombre);
+  padding: 2rem;
+}
+
+.accueil-hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.25rem 4rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(232, 207, 196, 0.45), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(125, 143, 105, 0.25), transparent 45%),
+    var(--creme);
+}
+
+.accueil-photo {
+  width: min(320px, 70vw);
+  height: min(320px, 70vw);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--blanc);
+  box-shadow: var(--ombre);
+  margin-bottom: 2rem;
+}
+
+.accueil-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.accueil-noms { font-size: clamp(2.8rem, 9vw, 5rem); margin-bottom: 0.5rem; }
+
+.accueil-date {
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--vert-fonce);
+  margin-bottom: 1.2rem;
+}
+
+.accueil-bienvenue { max-width: 620px; font-size: 1.25rem; margin-bottom: 2rem; }
+
+.compte-a-rebours {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.compte-a-rebours div {
+  background: var(--blanc);
+  border-radius: 12px;
+  box-shadow: var(--ombre);
+  padding: 0.8rem 1.2rem;
+  min-width: 80px;
+}
+
+.compte-a-rebours strong { display: block; font-size: 1.8rem; color: var(--vert-fonce); }
+
+.compte-a-rebours small { color: var(--vert-sauge); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.timeline { position: relative; max-width: 640px; margin: 0 auto; padding-left: 2rem; }
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background: var(--blush);
+}
+
+.evenement { position: relative; margin-bottom: 2rem; }
+
+.evenement::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--or);
+  border: 3px solid var(--blanc);
+  box-shadow: 0 0 0 2px var(--or);
+}
+
+.evenement time {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--vert-sauge);
+}
+
+.evenement h3 { margin: 0.2rem 0 0.3rem; }
+
+.jour-separateur {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.jour-separateur .calligraphie { font-size: 2.2rem; }
+
+.lieu, .hotel-carte { background: var(--blanc); border-radius: 14px; box-shadow: var(--ombre); overflow: hidden; }
+
+.lieu { display: flex; gap: 1.5rem; padding: 1.5rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+
+.lieu img { width: 130px; height: 130px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+
+.lieu p { margin: 0; }
+
+.plan-domaine { width: 100%; border-radius: 14px; box-shadow: var(--ombre); display: block; }
+
+.plan-note { text-align: center; font-size: 0.95rem; color: var(--vert-sauge); margin-top: 0.6rem; }
+
+.carrousel { position: relative; max-width: 720px; margin: 2rem auto 0; }
+
+.carrousel-piste { display: flex; transition: transform 0.45s ease; }
+
+.hotel-carte {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-carte img { width: 100%; height: 240px; object-fit: cover; }
+
+.hotel-infos { padding: 1.4rem 1.6rem; }
+
+.hotel-infos h3 { margin-bottom: 0.3rem; }
+
+.hotel-meta { color: var(--vert-sauge); font-size: 1rem; }
+
+.hotel-meta span { margin-right: 1rem; }
+
+.carrousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blanc);
+  color: var(--vert-fonce);
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--ombre);
+  z-index: 5;
+}
+
+.carrousel-btn.precedent { left: -10px; }
+.carrousel-btn.suivant { right: -10px; }
+
+.carrousel-points { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+
+.carrousel-points button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blush);
+  cursor: pointer;
+}
+
+.carrousel-points button.actif { background: var(--or); }
+
+.champ { margin-bottom: 1.4rem; }
+
+.champ label {
+  display: block;
+  font-weight: 600;
+  color: var(--vert-fonce);
+  margin-bottom: 0.35rem;
+}
+
+.champ small { color: var(--vert-sauge); display: block; margin-top: 0.3rem; }
+
+.champ input[type="text"],
+.champ input[type="email"],
+.champ input[type="number"],
+.champ textarea,
+.champ select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(125, 143, 105, 0.4);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  background: var(--blanc);
+  color: var(--encre);
+}
+
+.champ textarea { min-height: 110px; resize: vertical; }
+
+.champ:focus-within input,
+.champ:focus-within textarea,
+.champ:focus-within select { outline: 2px solid var(--vert-sauge); }
+
+.choix { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+.choix label { display: flex; align-items: center; gap: 0.45rem; font-weight: normal; color: var(--encre); }
+
+.bloc-enfants, .bloc-accompagnants { display: none; margin-top: 0.8rem; }
+
+.bloc-enfants.visible, .bloc-accompagnants.visible { display: block; }
+
+.champ-ligne { display: flex; gap: 0.8rem; margin-bottom: 0.6rem; }
+
+.champ-ligne input { flex: 1; }
+
+.retirer-ligne {
+  background: none;
+  border: none;
+  color: var(--blush);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.formulaire-statut { text-align: center; margin-top: 1rem; font-weight: 600; }
+
+.formulaire-statut.succes { color: var(--vert-sauge); }
+.formulaire-statut.erreur { color: #b05b4c; }
+
+.cagnotte-texte { max-width: 680px; margin: 0 auto 2rem; text-align: center; }
+
+.cagnotte-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.encadre {
+  background: rgba(232, 207, 196, 0.3);
+  border-left: 4px solid var(--or);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.4rem;
+  max-width: 680px;
+  margin: 2rem auto 0;
+}
+
+.pied {
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  color: var(--vert-sauge);
+  font-size: 1rem;
+}
+
+.pied .calligraphie { font-size: 1.8rem; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.05rem; }
+
+  .burger { display: block; }
+
+  .nav-liens {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--creme);
+    border-bottom: 1px solid rgba(125, 143, 105, 0.25);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-liens.ouvert { max-height: 320px; }
+
+  .nav-liens li { text-align: center; }
+
+  .nav-liens a { display: block; padding: 0.9rem 0; border-bottom: none; }
+
+  .page-titre .calligraphie { font-size: 2.4rem; }
+
+  .lieu { flex-direction: column; align-items: flex-start; }
+
+  .carrousel-btn.precedent { left: 4px; }
+  .carrousel-btn.suivant { right: 4px; }
+
+  .compte-a-rebours div { min-width: 68px; padding: 0.6rem 0.9rem; }
+}

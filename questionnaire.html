@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire — Camille &amp; Thomas</title>
+  <meta name="description" content="Répondez au questionnaire pour nous aider à organiser au mieux ce beau weekend.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="programme.html">Programme</a></li>
+        <li><a href="plan.html">Plan &amp; hôtels</a></li>
+        <li><a href="questionnaire.html" class="actif">Questionnaire</a></li>
+        <li><a href="cagnotte.html">Cagnotte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Questionnaire</h2>
+        <span class="sur-titre">Merci de répondre avant le 1er février 2026</span>
+      </div>
+
+      <form id="formulaire-rsvp" class="carte" novalidate>
+        <div class="champ">
+          <label for="nom">Nom &amp; prénom</label>
+          <input type="text" id="nom" name="nom" required placeholder="Ex. Dupont Camille">
+        </div>
+
+        <div class="champ">
+          <label for="email">Votre email</label>
+          <input type="email" id="email" name="email" required placeholder="vous@exemple.fr">
+          <small>Nous vous enverrons une confirmation de votre réponse à cette adresse.</small>
+        </div>
+
+        <div class="champ">
+          <label>Venez-vous seul(e) ou accompagné(e) ?</label>
+          <div class="choix">
+            <label><input type="radio" name="accompagne" value="Seul(e)" required> Seul(e)</label>
+            <label><input type="radio" name="accompagne" value="Accompagné(e)"> Accompagné(e)</label>
+          </div>
+          <div class="bloc-accompagnants" id="bloc-accompagnants">
+            <label for="accompagnants">Avec qui ?</label>
+            <input type="text" id="accompagnants" name="accompagnants" placeholder="Prénom(s) de votre/vos accompagnant(s)">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>Avez-vous des enfants qui vous accompagnent ?</label>
+          <div class="choix">
+            <label><input type="radio" name="enfants" value="Non"> Non</label>
+            <label><input type="radio" name="enfants" value="Oui"> Oui</label>
+          </div>
+          <div class="bloc-enfants" id="bloc-enfants">
+            <label for="ages-enfants">Leurs prénoms et âges</label>
+            <input type="text" id="ages-enfants" name="ages_enfants" placeholder="Ex. Léo (5 ans), Jade (8 ans)">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>À quels moments serez-vous des nôtres ?</label>
+          <div class="choix">
+            <label><input type="checkbox" name="moments" value="Mairie"> Cérémonie à la mairie</label>
+            <label><input type="checkbox" name="moments" value="Domaine - cocktail et dîner"> Cocktail &amp; dîner au domaine</label>
+            <label><input type="checkbox" name="moments" value="Soirée dansante"> Soirée dansante</label>
+            <label><input type="checkbox" name="moments" value="Brunch du dimanche"> Brunch du dimanche</label>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="allergies">Allergies ou régime alimentaire particulier</label>
+          <input type="text" id="allergies" name="allergies" placeholder="Ex. végétarien, sans gluten, allergie aux fruits à coque…">
+        </div>
+
+        <div class="champ">
+          <label for="commentaires">Commentaires</label>
+          <textarea id="commentaires" name="commentaires" placeholder="Une remarque, une question, une demande de navette… libre à vous !"></textarea>
+        </div>
+
+        <div style="text-align: center;">
+          <button type="submit" class="bouton">Envoyer ma réponse</button>
+        </div>
+        <p class="formulaire-statut" id="formulaire-statut" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Merci de faire partie de notre histoire</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

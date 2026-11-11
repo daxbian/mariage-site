@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camille &amp; Thomas — Notre mariage</title>
+  <meta name="description" content="Site de notre mariage : programme, plan d'accès, questionnaire de réponse et cagnotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-liens">
+        <li><a href="index.html" class="actif">Accueil</a></li>
+        <li><a href="programme.html">Programme</a></li>
+        <li><a href="plan.html">Plan &amp; hôtels</a></li>
+        <li><a href="questionnaire.html">Questionnaire</a></li>
+        <li><a href="cagnotte.html">Cagnotte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="accueil-hero">
+      <div class="accueil-photo">
+        <img src="assets/photo-couple.svg" alt="Photo du couple">
+      </div>
+      <h1 class="accueil-noms calligraphie">Camille &amp; Thomas</h1>
+      <p class="accueil-date">27 &amp; 28 mars 2026</p>
+      <p class="accueil-bienvenue calligraphie" style="font-size: 1.7rem;">
+        « C'est avec une immense joie que nous vous accueillons
+        pour célébrer notre union. Votre présence est le plus beau des cadeaux. »
+      </p>
+      <a href="questionnaire.html" class="bouton">Répondre au questionnaire</a>
+      <div class="compte-a-rebours" id="compte-a-rebours" aria-label="Compte à rebours du mariage">
+        <div><strong id="c-jours">--</strong><small>Jours</small></div>
+        <div><strong id="c-heures">--</strong><small>Heures</small></div>
+        <div><strong id="c-minutes">--</strong><small>Min</small></div>
+        <div><strong id="c-secondes">--</strong><small>Sec</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Merci de faire partie de notre histoire</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

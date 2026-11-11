@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan &amp; hôtels — Camille &amp; Thomas</title>
+  <meta name="description" content="Plan d'accès au domaine et hôtels à proximité avec prix et distances.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="programme.html">Programme</a></li>
+        <li><a href="plan.html" class="actif">Plan &amp; hôtels</a></li>
+        <li><a href="questionnaire.html">Questionnaire</a></li>
+        <li><a href="cagnotte.html">Cagnotte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Plan &amp; hôtels</h2>
+        <span class="sur-titre">Comment nous rejoindre et où dormir</span>
+      </div>
+
+      <img src="assets/plan-domaine.svg" alt="Plan du domaine" class="plan-domaine">
+      <p class="plan-note">Cliquez sur l'image pour l'agrandir — lien Google Maps à ajouter sous le plan.</p>
+      <p style="text-align: center; margin: 1.5rem 0 3rem;">
+        <a class="bouton secondaire" href="https://maps.google.com" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+      </p>
+
+      <h2 style="text-align: left;">Hôtels à proximité</h2>
+      <p>Voici quelques hôtels proches du domaine, avec une estimation des prix par nuit. Pensez à réserver tôt, le printemps arrive vite !</p>
+
+      <div class="carrousel" id="carrousel-hotels">
+        <button class="carrousel-btn precedent" aria-label="Hôtel précédent">&#8249;</button>
+        <div class="carrousel-piste">
+          <article class="hotel-carte">
+            <img src="assets/photo-couple.svg" alt="Hôtel Le Jardin">
+            <div class="hotel-infos">
+              <h3>Hôtel Le Jardin</h3>
+              <p class="hotel-meta"><span>≈ 90 € / nuit</span><span>3 km du domaine</span><span>★ 4,2</span></p>
+              <p>Chambres confortables, petit-déjeuner inclus. À 5 minutes en voiture du domaine.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Voir sur la carte</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="assets/photo-couple.svg" alt="Domaine des Vignes">
+            <div class="hotel-infos">
+              <h3>Domaine des Vignes</h3>
+              <p class="hotel-meta"><span>≈ 130 € / nuit</span><span>1,5 km du domaine</span><span>★ 4,6</span></p>
+              <p>Chambres d'hôtes au calme, sur place le samedi soir. Le plus proche du lieu de réception.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Voir sur la carte</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="assets/photo-couple.svg" alt="Hôtel de la Gare">
+            <div class="hotel-infos">
+              <h3>Hôtel de la Gare</h3>
+              <p class="hotel-meta"><span>≈ 65 € / nuit</span><span>7 km du domaine</span><span>★ 3,9</span></p>
+              <p>Option économique, proche de la gare et du centre-ville. Idéal si vous venez en train.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Voir sur la carte</a></p>
+            </div>
+          </article>
+        </div>
+        <button class="carrousel-btn suivant" aria-label="Hôtel suivant">&#8250;</button>
+        <div class="carrousel-points" role="tablist" aria-label="Choisir un hôtel"></div>
+      </div>
+
+      <div class="encadre">
+        <p><strong>Astuce :</strong> une navette sera organisée entre le domaine et les hôtels en fin de soirée. Précisez dans le questionnaire si vous en aurez besoin.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Merci de faire partie de notre histoire</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
