@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Questionario — Camille &amp; Thomas</title>
+  <meta name="description" content="Rispondete al questionario per aiutarci a organizzare al meglio questo bel weekend.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Scelta della lingua">
+          <a href="../questionnaire.html" hreflang="fr">FR</a>
+          <a href="questionario.html" class="actif" hreflang="it">IT</a>
+          <a href="../sr/upitnik.html" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Apri il menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-liens">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programma.html">Programma</a></li>
+        <li><a href="mappa.html">Mappa &amp; hotel</a></li>
+        <li><a href="questionario.html" class="actif">Questionario</a></li>
+        <li><a href="lista-nozze.html">Lista nozze</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Questionario</h2>
+        <span class="sur-titre">Rispondete entro il 1° febbraio 2026</span>
+      </div>
+
+      <form id="formulaire-rsvp" class="carte" novalidate
+            data-sujet-email="Risposta al questionario di matrimonio"
+            data-envoi="Invio in corso…"
+            data-message-validation="Compilate i campi obbligatori (nome, email, presenza)."
+            data-succes="Grazie! La vostra risposta è stata inviata, un'email di conferma vi aspetta. 💌"
+            data-mailto-ok="Si è aperto il vostro programma email con la risposta precompilata: non resta che inviarla. Se non si è aperto nulla, "
+            data-mailto-erreur="L'invio automatico non è riuscito: si è aperto il vostro programma email con la risposta precompilata. Se non si è aperto nulla, "
+            data-lien-mailto="cliccate qui">
+        <div class="champ">
+          <label for="nom">Nome &amp; cognome</label>
+          <input type="text" id="nom" name="nom" required placeholder="Es. Rossi Maria">
+        </div>
+
+        <div class="champ">
+          <label for="email">La vostra email</label>
+          <input type="email" id="email" name="email" required placeholder="voi@esempio.it">
+          <small>Vi invieremo la conferma della vostra risposta a questo indirizzo.</small>
+        </div>
+
+        <div class="champ">
+          <label>Venite da soli o accompagnati?</label>
+          <div class="choix">
+            <label><input type="radio" name="accompagne" value="Da solo/a" required> Da solo/a</label>
+            <label><input type="radio" name="accompagne" value="Accompagnato/a" data-apri="1"> Accompagnato/a</label>
+          </div>
+          <div class="bloc-accompagnants" id="bloc-accompagnants">
+            <label for="accompagnants">Con chi?</label>
+            <input type="text" id="accompagnants" name="accompagnants" placeholder="Nome/i del/della vostro/a accompagnatore/i">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>Avete bambini che vi accompagnano?</label>
+          <div class="choix">
+            <label><input type="radio" name="enfants" value="No"> No</label>
+            <label><input type="radio" name="enfants" value="Sì" data-apri="1"> Sì</label>
+          </div>
+          <div class="bloc-enfants" id="bloc-enfants">
+            <label for="ages-enfants">I loro nomi ed età</label>
+            <input type="text" id="ages-enfants" name="ages_enfants" placeholder="Es. Leo (5 anni), Giulia (8 anni)">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>A quali momenti sarete dei nostri?</label>
+          <div class="choix">
+            <label><input type="checkbox" name="moments" value="Cerimonia al municipio"> Cerimonia al municipio</label>
+            <label><input type="checkbox" name="moments" value="Aperitivo e cena al dominio"> Aperitivo &amp; cena al dominio</label>
+            <label><input type="checkbox" name="moments" value="Festa ballando"> Festa ballando</label>
+            <label><input type="checkbox" name="moments" value="Brunch della domenica"> Brunch della domenica</label>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="allergies">Allergie o regime alimentare particolare</label>
+          <input type="text" id="allergies" name="allergies" placeholder="Es. vegetariano, senza glutine, allergia alla frutta a guscio…">
+        </div>
+
+        <div class="champ">
+          <label for="commentaires">Commenti</label>
+          <textarea id="commentaires" name="commentaires" placeholder="Una nota, una domanda, una richiesta di navetta… come preferite!"></textarea>
+        </div>
+
+        <div style="text-align: center;">
+          <button type="submit" class="bouton">Invia la mia risposta</button>
+        </div>
+        <p class="formulaire-statut" id="formulaire-statut" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Grazie per far parte della nostra storia</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

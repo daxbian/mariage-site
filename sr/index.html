@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Camille &amp; Thomas — Naše venčanje</title>
+  <meta name="description" content="Sajt našeg venčanja: program, mapa, upitnik za odgovor i poklon fond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Izbor jezika">
+          <a href="../index.html" hreflang="fr">FR</a>
+          <a href="../it/index.html" hreflang="it">IT</a>
+          <a href="index.html" class="actif" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Otvori meni" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-liens">
+        <li><a href="index.html" class="actif">Početna</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="mapa.html">Mapa &amp; hoteli</a></li>
+        <li><a href="upitnik.html">Upitnik</a></li>
+        <li><a href="poklon-fond.html">Poklon fond</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="accueil-hero">
+      <div class="accueil-photo">
+        <img src="../assets/photo-couple.svg" alt="Fotografija para">
+      </div>
+      <h1 class="accueil-noms calligraphie">Camille &amp; Thomas</h1>
+      <p class="accueil-date">27. i 28. mart 2026.</p>
+      <p class="accueil-bienvenue calligraphie" style="font-size: 1.7rem;">
+        « S neizmernom radošću vas pozdravljamo povodom proslave našeg venčanja.
+        Vaše prisustvo je najlepši poklon. »
+      </p>
+      <a href="upitnik.html" class="bouton">Popunite upitnik</a>
+      <div class="compte-a-rebours" id="compte-a-rebours" data-message-fin="Danas je veliki dan!" aria-label="Odbrojavanje do venčanja">
+        <div><strong id="c-jours">--</strong><small>Dana</small></div>
+        <div><strong id="c-heures">--</strong><small>Sati</small></div>
+        <div><strong id="c-minutes">--</strong><small>Min</small></div>
+        <div><strong id="c-secondes">--</strong><small>Sek</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Hvala što ste deo naše priče</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

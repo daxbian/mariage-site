@@ -12,6 +12,16 @@ Site statique (HTML/CSS/JS pur, zéro dépendance, zéro base de données) : rap
 | `questionnaire.html` | Formulaire RSVP (nom, accompagnants, enfants/âges, moments, allergies, commentaires) |
 | `cagnotte.html` | Cagnotte pour le voyage de noces + mention de l'urne le jour J |
 
+## Langues (FR / IT / SR)
+
+Le site existe en 3 langues, avec un sélecteur FR / IT / SR dans la barre de navigation :
+
+- **Français** : racine du site (`index.html`, `programme.html`, …)
+- **Italien** : dossier `it/` (`it/index.html`, `it/programma.html`, `it/mappa.html`, `it/questionario.html`, `it/lista-nozze.html`)
+- **Serbe (latin)** : dossier `sr/` (`sr/index.html`, `sr/program.html`, `sr/mapa.html`, `sr/upitnik.html`, `sr/poklon-fond.html`)
+
+Chaque page renvoie vers son équivalent dans les autres langues. Les textes d'interface du formulaire et du compte à rebours se règlent via les attributs `data-*` sur les balises `<form>` et `<div class="compte-a-rebours">` (déjà renseignés dans les 3 langues). Pour passer le serbe en alphabet cyrillique, dupliquer le dossier `sr/` et traduire les textes.
+
 ## Avant la mise en ligne — checklist
 
 1. **Noms, dates, textes** : remplacer « Camille & Thomas », les dates, et les textes entre `[crochets]` dans les pages.

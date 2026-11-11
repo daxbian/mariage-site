@@ -45,7 +45,8 @@ function initCompteARebours() {
   function maj() {
     const reste = cible - Date.now();
     if (reste <= 0) {
-      bloc.innerHTML = "<div><strong>🎉</strong><small>C'est aujourd'hui !</small></div>";
+      const message = bloc.dataset.messageFin || "C'est aujourd'hui !";
+      bloc.innerHTML = "<div><strong>🎉</strong><small>" + message + "</small></div>";
       return;
     }
     const s = Math.floor(reste / 1000);
@@ -110,36 +111,39 @@ function initFormulaire() {
 
   formulaire.querySelectorAll('input[name="accompagne"]').forEach((radio) =>
     radio.addEventListener("change", () =>
-      blocAccompagnants.classList.toggle("visible", radio.value === "Accompagné(e)" && radio.checked)
+      blocAccompagnants.classList.toggle("visible", radio.dataset.apri === "1" && radio.checked)
     )
   );
 
   formulaire.querySelectorAll('input[name="enfants"]').forEach((radio) =>
     radio.addEventListener("change", () =>
-      blocEnfants.classList.toggle("visible", radio.value === "Oui" && radio.checked)
+      blocEnfants.classList.toggle("visible", radio.dataset.apri === "1" && radio.checked)
     )
   );
 
   formulaire.addEventListener("submit", async (e) => {
     e.preventDefault();
     statut.className = "formulaire-statut";
-    statut.textContent = "Envoi en cours…";
+    statut.textContent = formulaire.dataset.envoi || "Envoi en cours…";
 
     if (!formulaire.checkValidity()) {
       statut.className = "formulaire-statut erreur";
-      statut.textContent = "Merci de remplir les champs obligatoires (nom, email, venue).";
+      statut.textContent =
+        formulaire.dataset.messageValidation ||
+        "Merci de remplir les champs obligatoires (nom, email, venue).";
       return;
     }
 
     const donnees = collecterDonnees(formulaire);
 
     if (!endpointConfigure()) {
-      ouvrirMailto(donnees);
+      ouvrirMailto(formulaire, donnees);
       statut.className = "formulaire-statut succes";
       statut.innerHTML =
-        "Votre logiciel email vient de s'ouvrir avec votre réponse pré-remplie : il ne reste qu'à l'envoyer. " +
-        "Si rien ne s'est ouvert, " +
-        '<a href="' + lienMailto(donnees) + '">cliquez ici</a>.';
+        (formulaire.dataset.mailtoOk ||
+          "Votre logiciel email vient de s'ouvrir avec votre réponse pré-remplie : il ne reste qu'à l'envoyer. Si rien ne s'est ouvert, ") +
+        '<a href="' + lienMailto(formulaire, donnees) + '">' +
+        (formulaire.dataset.lienMailto || "cliquez ici") + "</a>.";
       return;
     }
 
@@ -151,15 +155,18 @@ function initFormulaire() {
       });
       if (!reponse.ok) throw new Error("Erreur " + reponse.status);
       statut.className = "formulaire-statut succes";
-      statut.textContent = "Merci ! Votre réponse a bien été envoyée, un email de confirmation vous attend. 💌";
+      statut.textContent =
+        formulaire.dataset.succes ||
+        "Merci ! Votre réponse a bien été envoyée, un email de confirmation vous attend. 💌";
       reinitialiserFormulaire(formulaire);
     } catch {
-      ouvrirMailto(donnees);
+      ouvrirMailto(formulaire, donnees);
       statut.className = "formulaire-statut erreur";
       statut.innerHTML =
-        "L'envoi automatique a échoué : votre logiciel email s'est ouvert avec votre réponse pré-remplie. " +
-        "Si rien ne s'est ouvert, " +
-        '<a href="' + lienMailto(donnees) + '">cliquez ici</a>.';
+        (formulaire.dataset.mailtoErreur ||
+          "L'envoi automatique a échoué : votre logiciel email s'est ouvert avec votre réponse pré-remplie. Si rien ne s'est ouvert, ") +
+        '<a href="' + lienMailto(formulaire, donnees) + '">' +
+        (formulaire.dataset.lienMailto || "cliquez ici") + "</a>.";
     }
   });
 }
@@ -179,11 +186,11 @@ function reinitialiserFormulaire(formulaire) {
   document.getElementById("bloc-enfants")?.classList.remove("visible");
 }
 
-function ouvrirMailto(donnees) {
-  window.location.href = lienMailto(donnees);
+function ouvrirMailto(formulaire, donnees) {
+  window.location.href = lienMailto(formulaire, donnees);
 }
 
-function lienMailto(donnees) {
+function lienMailto(formulaire, donnees) {
   const libelles = {
     nom: "Nom & prénom",
     email: "Email",
@@ -199,9 +206,10 @@ function lienMailto(donnees) {
     .filter(([, valeur]) => valeur)
     .map(([cle, valeur]) => (libelles[cle] || cle) + " : " + valeur)
     .join("\n");
+  const sujet = formulaire.dataset.sujetEmail || "Réponse au questionnaire de mariage";
   return (
     "mailto:" + CONFIG.emailDestinataire +
-    "?subject=" + encodeURIComponent("Réponse au questionnaire de mariage — " + (donnees.nom || "")) +
+    "?subject=" + encodeURIComponent(sujet + " — " + (donnees.nom || "")) +
     "&body=" + encodeURIComponent(corps)
   );
 }

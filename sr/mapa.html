@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mapa &amp; hoteli — Camille &amp; Thomas</title>
+  <meta name="description" content="Mapa za dolazak na imanje i hoteli u okolini sa cenama i udaljenostima.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Izbor jezika">
+          <a href="../plan.html" hreflang="fr">FR</a>
+          <a href="../it/mappa.html" hreflang="it">IT</a>
+          <a href="mapa.html" class="actif" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Otvori meni" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-liens">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="mapa.html" class="actif">Mapa &amp; hoteli</a></li>
+        <li><a href="upitnik.html">Upitnik</a></li>
+        <li><a href="poklon-fond.html">Poklon fond</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Mapa &amp; hoteli</h2>
+        <span class="sur-titre">Kako da dođete i gde da odsednete</span>
+      </div>
+
+      <img src="../assets/plan-domaine.svg" alt="Mapa imanja" class="plan-domaine">
+      <p class="plan-note">Kliknite na sliku da je uvećate — Google Maps link dodati ispod mape.</p>
+      <p style="text-align: center; margin: 1.5rem 0 3rem;">
+        <a class="bouton secondaire" href="https://maps.google.com" target="_blank" rel="noopener">Otvori u Google Maps</a>
+      </p>
+
+      <h2 style="text-align: left;">Hoteli u okolini</h2>
+      <p>Evo nekoliko hotela blizu imanja, sa okvirnim cenama po noći. Rezervišite na vreme, proleće brzo stiže!</p>
+
+      <div class="carrousel" id="carrousel-hotels">
+        <button class="carrousel-btn precedent" aria-label="Prethodni hotel">&#8249;</button>
+        <div class="carrousel-piste">
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Hotel Le Jardin">
+            <div class="hotel-infos">
+              <h3>Hotel Le Jardin</h3>
+              <p class="hotel-meta"><span>≈ 90 € / noć</span><span>3 km od imanja</span><span>★ 4,2</span></p>
+              <p>Udobne sobe, doručak uključen. 5 minuta vožnje od imanja.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vidite na mapi</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Imanje des Vignes">
+            <div class="hotel-infos">
+              <h3>Imanje des Vignes</h3>
+              <p class="hotel-meta"><span>≈ 130 € / noć</span><span>1,5 km od imanja</span><span>★ 4,6</span></p>
+              <p>Sobe u miru, na licu mesta u subotu uveče. Najbliže mestu prijema.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vidite na mapi</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Hotel de la Gare">
+            <div class="hotel-infos">
+              <h3>Hotel de la Gare</h3>
+              <p class="hotel-meta"><span>≈ 65 € / noć</span><span>7 km od imanja</span><span>★ 3,9</span></p>
+              <p>Ekonomična opcija, blizu stanice i centra. Idealno ako dolazite vozom.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vidite na mapi</a></p>
+            </div>
+          </article>
+        </div>
+        <button class="carrousel-btn suivant" aria-label="Sledeći hotel">&#8250;</button>
+        <div class="carrousel-points" role="tablist" aria-label="Izaberite hotel"></div>
+      </div>
+
+      <div class="encadre">
+        <p><strong>Savet:</strong> krajem večeri biće organizovan prevoz između imanja i hotela. Napišite u upitniku ako vam treba.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Hvala što ste deo naše priče</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

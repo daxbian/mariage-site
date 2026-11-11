@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Upitnik — Camille &amp; Thomas</title>
+  <meta name="description" content="Popunite upitnik da biste nam pomogli da najbolje organizujemo ovaj lepi vikend.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Izbor jezika">
+          <a href="../questionnaire.html" hreflang="fr">FR</a>
+          <a href="../it/questionario.html" hreflang="it">IT</a>
+          <a href="upitnik.html" class="actif" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Otvori meni" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-liens">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="mapa.html">Mapa &amp; hoteli</a></li>
+        <li><a href="upitnik.html" class="actif">Upitnik</a></li>
+        <li><a href="poklon-fond.html">Poklon fond</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Upitnik</h2>
+        <span class="sur-titre">Molimo odgovorite do 1. februara 2026.</span>
+      </div>
+
+      <form id="formulaire-rsvp" class="carte" novalidate
+            data-sujet-email="Odgovor na upitnik za venčanje"
+            data-envoi="Slanje u toku…"
+            data-message-validation="Molimo popunite obavezna polja (ime, imejl, dolazak)."
+            data-succes="Hvala! Vaš odgovor je poslat, imejl potvrda vas čeka. 💌"
+            data-mailto-ok="Otvorila se vaša imejl aplikacija sa popunjenim odgovorom: samo treba poslati. Ako se ništa nije otvorilo, "
+            data-mailto-erreur="Automatsko slanje nije uspelo: otvorila se vaša imejl aplikacija sa popunjenim odgovorom. Ako se ništa nije otvorilo, "
+            data-lien-mailto="kliknite ovde">
+        <div class="champ">
+          <label for="nom">Ime &amp; prezime</label>
+          <input type="text" id="nom" name="nom" required placeholder="Npr. Marković Ana">
+        </div>
+
+        <div class="champ">
+          <label for="email">Vaša imejl adresa</label>
+          <input type="email" id="email" name="email" required placeholder="vi@primer.rs">
+          <small>Na ovu adresu poslaćemo vam potvrdu vašeg odgovora.</small>
+        </div>
+
+        <div class="champ">
+          <label>Dolazite li sami ili u pratnji?</label>
+          <div class="choix">
+            <label><input type="radio" name="accompagne" value="Sam/Sama" required> Sam/Sama</label>
+            <label><input type="radio" name="accompagne" value="U pratnji" data-apri="1"> U pratnji</label>
+          </div>
+          <div class="bloc-accompagnants" id="bloc-accompagnants">
+            <label for="accompagnants">Sa kim?</label>
+            <input type="text" id="accompagnants" name="accompagnants" placeholder="Ime/i osobe koje vas prati">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>Da li dolazite sa decom?</label>
+          <div class="choix">
+            <label><input type="radio" name="enfants" value="Ne"> Ne</label>
+            <label><input type="radio" name="enfants" value="Da" data-apri="1"> Da</label>
+          </div>
+          <div class="bloc-enfants" id="bloc-enfants">
+            <label for="ages-enfants">Njihova imena i godišta</label>
+            <input type="text" id="ages-enfants" name="ages_enfants" placeholder="Npr. Luka (5 godina), Jana (8 godina)">
+          </div>
+        </div>
+
+        <div class="champ">
+          <label>Na kojim trenucima ćete biti sa nama?</label>
+          <div class="choix">
+            <label><input type="checkbox" name="moments" value="Ceremonija u opštini"> Ceremonija u opštini</label>
+            <label><input type="checkbox" name="moments" value="Koktel i večera na imanju"> Koktel &amp; večera na imanju</label>
+            <label><input type="checkbox" name="moments" value="Plesna večer"> Plesna večer</label>
+            <label><input type="checkbox" name="moments" value="Brunch u nedelju"> Brunch u nedelju</label>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="allergies">Alergije ili posebna ishrana</label>
+          <input type="text" id="allergies" name="allergies" placeholder="Npr. vegetarijanska ishrana, bez glutena, alergija na orašaste plodove…">
+        </div>
+
+        <div class="champ">
+          <label for="commentaires">Komentari</label>
+          <textarea id="commentaires" name="commentaires" placeholder="Napomena, pitanje, zahtev za prevoz… slobodno!"></textarea>
+        </div>
+
+        <div style="text-align: center;">
+          <button type="submit" class="bouton">Pošalji moj odgovor</button>
+        </div>
+        <p class="formulaire-statut" id="formulaire-statut" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Hvala što ste deo naše priče</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

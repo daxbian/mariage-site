@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mappa &amp; hotel — Camille &amp; Thomas</title>
+  <meta name="description" content="Mappa per raggiungere il dominio e hotel nelle vicinanze con prezzi e distanze.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="en-tete">
+    <nav class="nav-contenu">
+      <a href="index.html" class="logo">Camille &amp; Thomas</a>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Scelta della lingua">
+          <a href="../plan.html" hreflang="fr">FR</a>
+          <a href="mappa.html" class="actif" hreflang="it">IT</a>
+          <a href="../sr/mapa.html" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Apri il menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-liens">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programma.html">Programma</a></li>
+        <li><a href="mappa.html" class="actif">Mappa &amp; hotel</a></li>
+        <li><a href="questionario.html">Questionario</a></li>
+        <li><a href="lista-nozze.html">Lista nozze</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-titre">
+        <h2 class="calligraphie">Mappa &amp; hotel</h2>
+        <span class="sur-titre">Come raggiungerci e dove dormire</span>
+      </div>
+
+      <img src="../assets/plan-domaine.svg" alt="Mappa del dominio" class="plan-domaine">
+      <p class="plan-note">Cliccate sull'immagine per ingrandirla — link Google Maps da aggiungere sotto la mappa.</p>
+      <p style="text-align: center; margin: 1.5rem 0 3rem;">
+        <a class="bouton secondaire" href="https://maps.google.com" target="_blank" rel="noopener">Apri in Google Maps</a>
+      </p>
+
+      <h2 style="text-align: left;">Hotel nelle vicinanze</h2>
+      <p>Ecco alcuni hotel vicino al dominio, con una stima dei prezzi a notte. Prenotate in anticipo: la primavera arriva in fretta!</p>
+
+      <div class="carrousel" id="carrousel-hotels">
+        <button class="carrousel-btn precedent" aria-label="Hotel precedente">&#8249;</button>
+        <div class="carrousel-piste">
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Hotel Le Jardin">
+            <div class="hotel-infos">
+              <h3>Hotel Le Jardin</h3>
+              <p class="hotel-meta"><span>≈ 90 € / notte</span><span>3 km dal dominio</span><span>★ 4,2</span></p>
+              <p>Camere confortevoli, colazione inclusa. A 5 minuti in auto dal dominio.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vedi sulla mappa</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Dominio delle Vigne">
+            <div class="hotel-infos">
+              <h3>Dominio delle Vigne</h3>
+              <p class="hotel-meta"><span>≈ 130 € / notte</span><span>1,5 km dal dominio</span><span>★ 4,6</span></p>
+              <p>Camere in piena tranquillità, sul posto sabato sera. Il più vicino al luogo della ricezione.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vedi sulla mappa</a></p>
+            </div>
+          </article>
+          <article class="hotel-carte">
+            <img src="../assets/photo-couple.svg" alt="Hotel della Stazione">
+            <div class="hotel-infos">
+              <h3>Hotel della Stazione</h3>
+              <p class="hotel-meta"><span>≈ 65 € / notte</span><span>7 km dal dominio</span><span>★ 3,9</span></p>
+              <p>Opzione economica, vicino alla stazione e al centro. Ideale se arrivate in treno.</p>
+              <p><a href="https://maps.google.com" target="_blank" rel="noopener">Vedi sulla mappa</a></p>
+            </div>
+          </article>
+        </div>
+        <button class="carrousel-btn suivant" aria-label="Hotel successivo">&#8250;</button>
+        <div class="carrousel-points" role="tablist" aria-label="Scegli un hotel"></div>
+      </div>
+
+      <div class="encadre">
+        <p><strong>Consiglio:</strong> a fine serata sarà organizzata una navetta tra il dominio e gli hotel. Indicate nel questionario se vi servirà.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <p class="calligraphie">Grazie per far parte della nostra storia</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

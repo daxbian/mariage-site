@@ -14,9 +14,16 @@
   <header class="en-tete">
     <nav class="nav-contenu">
       <a href="index.html" class="logo">Camille &amp; Thomas</a>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-droite">
+        <nav class="selecteur-langue" aria-label="Choix de la langue">
+          <a href="questionnaire.html" class="actif" hreflang="fr">FR</a>
+          <a href="it/questionario.html" hreflang="it">IT</a>
+          <a href="sr/upitnik.html" hreflang="sr">SR</a>
+        </nav>
+        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <ul class="nav-liens">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="programme.html">Programme</a></li>
@@ -50,7 +57,7 @@
           <label>Venez-vous seul(e) ou accompagné(e) ?</label>
           <div class="choix">
             <label><input type="radio" name="accompagne" value="Seul(e)" required> Seul(e)</label>
-            <label><input type="radio" name="accompagne" value="Accompagné(e)"> Accompagné(e)</label>
+            <label><input type="radio" name="accompagne" value="Accompagné(e)" data-apri="1"> Accompagné(e)</label>
           </div>
           <div class="bloc-accompagnants" id="bloc-accompagnants">
             <label for="accompagnants">Avec qui ?</label>
@@ -62,7 +69,7 @@
           <label>Avez-vous des enfants qui vous accompagnent ?</label>
           <div class="choix">
             <label><input type="radio" name="enfants" value="Non"> Non</label>
-            <label><input type="radio" name="enfants" value="Oui"> Oui</label>
+            <label><input type="radio" name="enfants" value="Oui" data-apri="1"> Oui</label>
           </div>
           <div class="bloc-enfants" id="bloc-enfants">
             <label for="ages-enfants">Leurs prénoms et âges</label>

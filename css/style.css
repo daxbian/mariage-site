@@ -117,6 +117,29 @@ a { color: var(--vert-fonce); }
 
 .nav-liens a:hover, .nav-liens a.actif { border-bottom-color: var(--or); }
 
+.nav-droite { display: flex; align-items: center; gap: 0.8rem; }
+
+.selecteur-langue { display: flex; gap: 0.35rem; }
+
+.selecteur-langue a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 143, 105, 0.45);
+  color: var(--vert-fonce);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.selecteur-langue a:hover { background: rgba(125, 143, 105, 0.15); }
+
+.selecteur-langue a.actif {
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  border-color: var(--vert-fonce);
+}
+
 .burger {
   display: none;
   background: none;
