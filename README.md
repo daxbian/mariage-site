@@ -24,7 +24,9 @@ Site statique (HTML/CSS/JS pur, zéro dépendance, zéro base de données) : rap
 
 ## Activer l'envoi des réponses par email
 
-Le site est statique : pour recevoir les réponses par email (et envoyer une confirmation à l'invité), utiliser un service de formulaires gratuit :
+**Sans aucune configuration technique**, le formulaire fonctionne déjà en mode e-mail : quand un invité clique sur « Envoyer ma réponse », son logiciel email s'ouvre avec toutes ses réponses pré-remplies, adressées à `CONFIG.emailDestinataire` (à modifier dans `js/main.js`).
+
+Pour une expérience plus fluide ( envoi direct depuis le site + confirmation automatique à l'invité ), brancher un service de formulaires gratuit :
 
 - **Formspree** (recommandé, gratuit jusqu'à 50 soumissions/mois) :
   1. Créer un compte sur formspree.io, créer un formulaire, copier l'ID.
@@ -32,7 +34,7 @@ Le site est statique : pour recevoir les réponses par email (et envoyer une con
   3. Dans le tableau de bord Formspree : activer l'email de confirmation à l'invité (autoresponse) — chaque réponse vous est envoyée par email.
 - Alternatives gratuites : **Getform**, **Web3Forms** (même principe, remplacer l'endpoint).
 
-En cas d'échec du service, le site propose automatiquement à l'invité un lien `mailto:` — remplacer `VOTRE.EMAIL@example.com` dans `js/main.js` par votre email.
+Tant que l'endpoint Formspree n'est pas renseigné, le site utilise automatiquement le mode e-mail pré-rempli ; en cas d'échec du service une fois configuré, il retombe aussi sur ce mode.
 
 ## Hébergement gratuit (recommandé : GitHub Pages)
 

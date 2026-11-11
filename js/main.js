@@ -1,8 +1,17 @@
 const CONFIG = {
   dateMariage: "2026-03-27T14:30:00",
   endpointFormulaire: "https://formspree.io/f/VOTRE_ID_FORMSPREE",
+  emailDestinataire: "VOTRE.EMAIL@example.com",
   lienCagnotte: "https://VOTRE-LIEN-CAGNOTTE.example",
 };
+
+function endpointConfigure() {
+  return CONFIG.endpointFormulaire && !CONFIG.endpointFormulaire.includes("VOTRE_ID_FORMSPREE");
+}
+
+function emailConfigure() {
+  return CONFIG.emailDestinataire && !CONFIG.emailDestinataire.includes("example.com");
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
@@ -122,11 +131,17 @@ function initFormulaire() {
       return;
     }
 
-    const donnees = Object.fromEntries(new FormData(formulaire).entries());
-    donnees.moments = formulaire
-      .querySelectorAll('input[name="moments"]:checked')
-      .map((c) => c.value)
-      .join(", ");
+    const donnees = collecterDonnees(formulaire);
+
+    if (!endpointConfigure()) {
+      ouvrirMailto(donnees);
+      statut.className = "formulaire-statut succes";
+      statut.innerHTML =
+        "Votre logiciel email vient de s'ouvrir avec votre réponse pré-remplie : il ne reste qu'à l'envoyer. " +
+        "Si rien ne s'est ouvert, " +
+        '<a href="' + lienMailto(donnees) + '">cliquez ici</a>.';
+      return;
+    }
 
     try {
       const reponse = await fetch(CONFIG.endpointFormulaire, {
@@ -137,27 +152,57 @@ function initFormulaire() {
       if (!reponse.ok) throw new Error("Erreur " + reponse.status);
       statut.className = "formulaire-statut succes";
       statut.textContent = "Merci ! Votre réponse a bien été envoyée, un email de confirmation vous attend. 💌";
-      formulaire.reset();
-      blocAccompagnants.classList.remove("visible");
-      blocEnfants.classList.remove("visible");
+      reinitialiserFormulaire(formulaire);
     } catch {
+      ouvrirMailto(donnees);
       statut.className = "formulaire-statut erreur";
       statut.innerHTML =
-        "L'envoi automatique a échoué. " +
-        '<a href="' + lienMailto(donnees) + '">Cliquez ici pour envoyer votre réponse par email</a>.';
+        "L'envoi automatique a échoué : votre logiciel email s'est ouvert avec votre réponse pré-remplie. " +
+        "Si rien ne s'est ouvert, " +
+        '<a href="' + lienMailto(donnees) + '">cliquez ici</a>.';
     }
   });
 }
 
+function collecterDonnees(formulaire) {
+  const donnees = Object.fromEntries(new FormData(formulaire).entries());
+  donnees.moments = formulaire
+    .querySelectorAll('input[name="moments"]:checked')
+    .map((c) => c.value)
+    .join(", ");
+  return donnees;
+}
+
+function reinitialiserFormulaire(formulaire) {
+  formulaire.reset();
+  document.getElementById("bloc-accompagnants")?.classList.remove("visible");
+  document.getElementById("bloc-enfants")?.classList.remove("visible");
+}
+
+function ouvrirMailto(donnees) {
+  window.location.href = lienMailto(donnees);
+}
+
 function lienMailto(donnees) {
+  const libelles = {
+    nom: "Nom & prénom",
+    email: "Email",
+    accompagne: "Vient",
+    accompagnants: "Accompagnant(s)",
+    enfants: "Enfants",
+    ages_enfants: "Prénoms et âges des enfants",
+    moments: "Moments présents",
+    allergies: "Allergies / régime",
+    commentaires: "Commentaires",
+  };
   const corps = Object.entries(donnees)
-    .map(([cle, valeur]) => cle + " : " + valeur)
+    .filter(([, valeur]) => valeur)
+    .map(([cle, valeur]) => (libelles[cle] || cle) + " : " + valeur)
     .join("\n");
   return (
-    "mailto:VOTRE.EMAIL@example.com?subject=" +
-    encodeURIComponent("Réponse au questionnaire de mariage") +
-    "&body=" +
-    encodeURIComponent(corps)
+    "mailto:" + CONFIG.emailDestinataire +
+    "?subject=" + encodeURIComponent("Réponse au questionnaire de mariage — " + (donnees.nom || "")) +
+    "&body=" + encodeURIComponent(corps)
   );
 }
 

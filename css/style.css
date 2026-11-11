@@ -263,7 +263,13 @@ a { color: var(--vert-fonce); }
 
 .plan-note { text-align: center; font-size: 0.95rem; color: var(--vert-sauge); margin-top: 0.6rem; }
 
-.carrousel { position: relative; max-width: 720px; margin: 2rem auto 0; }
+.carrousel {
+  position: relative;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  overflow: hidden;
+  touch-action: pan-y;
+}
 
 .carrousel-piste { display: flex; transition: transform 0.45s ease; }
 
@@ -299,8 +305,8 @@ a { color: var(--vert-fonce); }
   z-index: 5;
 }
 
-.carrousel-btn.precedent { left: -10px; }
-.carrousel-btn.suivant { right: -10px; }
+.carrousel-btn.precedent { left: 10px; }
+.carrousel-btn.suivant { right: 10px; }
 
 .carrousel-points { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
 
@@ -422,9 +428,6 @@ a { color: var(--vert-fonce); }
   .page-titre .calligraphie { font-size: 2.4rem; }
 
   .lieu { flex-direction: column; align-items: flex-start; }
-
-  .carrousel-btn.precedent { left: 4px; }
-  .carrousel-btn.suivant { right: 4px; }
 
   .compte-a-rebours div { min-width: 68px; padding: 0.6rem 0.9rem; }
 }
